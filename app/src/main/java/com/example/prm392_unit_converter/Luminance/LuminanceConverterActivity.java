@@ -31,6 +31,7 @@ public class LuminanceConverterActivity extends AppCompatActivity {
                 TextView inputText = findViewById(R.id.inputBox);
                 BigDecimal input = new BigDecimal(inputText.getText().toString());
                 BigDecimal result = convert(input, "cd/ft2", "cd/m2");
+                result = result.stripTrailingZeros();
                 TextView resultText = findViewById(R.id.resultText);
                 resultText.setText(result.toString());
             }
