@@ -12,7 +12,7 @@
         android:theme="@style/Theme.PRM392_Unit_Converter"
         tools:targetApi="31">
         <activity
-            android:name=".LuminanceConverterActivity"
+            android:name=".Luminance.LuminanceConverterActivity"
             android:exported="false" />
         <activity
             android:name=".Splash.SplashScreen"

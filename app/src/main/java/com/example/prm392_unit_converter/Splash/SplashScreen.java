@@ -7,6 +7,7 @@ import android.os.Handler;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.prm392_unit_converter.HomeScreen;
+import com.example.prm392_unit_converter.Luminance.LuminanceConverterActivity;
 import com.example.prm392_unit_converter.R;
 
 
@@ -21,7 +22,7 @@ public class SplashScreen extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashScreen.this, HomeScreen.class);
+                Intent intent = new Intent(SplashScreen.this, LuminanceConverterActivity.class);
                 startActivity(intent);
                 finish();
             }
