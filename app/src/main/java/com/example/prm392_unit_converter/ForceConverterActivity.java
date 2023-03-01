@@ -28,7 +28,7 @@ public class ForceConverterActivity extends AppCompatActivity {
         forceConversions.put("ozf",0.278013851);
 
         //Testing
-        ((TextView)findViewById(R.id.tv_test_convert)).setText(String.valueOf(convert(100,"kN","lbf")));
+        ((TextView)findViewById(R.id.tv_fromUnit)).setText(String.valueOf(convert(100,"kN","lbf")));
     }
 
     private double convert(double from, String fromForce, String toForce){
