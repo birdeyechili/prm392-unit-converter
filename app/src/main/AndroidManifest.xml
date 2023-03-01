@@ -15,14 +15,23 @@
             android:name=".ForceConverterActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
-            android:exported="true" >
+            android:name=".IlluminationConverterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Luminance.LuminanceConverterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Splash.SplashScreen"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".HomeScreen"
+            android:exported="false" />
     </application>
 
 </manifest>
