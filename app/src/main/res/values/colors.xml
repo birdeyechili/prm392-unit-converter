@@ -7,4 +7,16 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="grey">#808080</color>
+    <color name="hintColor">#808080</color>
+    <color name="background">#FFFFFFFF</color>
+    <color name="background2">#FFFFFFFF</color>
+    <color name="textColor">#FF000000</color>
+    <color name="textColor1">#FFFFFF</color>
+    <color name="headercolor">#70ccdf</color>
+    <color name="convertercolor">#4C5E61</color>
+
+
+    <color name="selectunit">#A900C6</color>
+    <color name="convertUnit">#F42121</color>
 </resources>

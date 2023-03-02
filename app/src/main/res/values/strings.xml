@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">PRM392_Unit_Converter</string>
+    <string name="app_name">Unit Converter</string>
+    <string name="to">To</string>
 </resources>
