@@ -12,7 +12,7 @@
         android:theme="@style/Theme.PRM392_Unit_Converter"
         tools:targetApi="31">
         <activity
-            android:name=".IlluminationConverterActivity"
+            android:name=".Illumination.IlluminationConverterActivity"
             android:exported="false" />
         <activity
             android:name=".Luminance.LuminanceConverterActivity"
