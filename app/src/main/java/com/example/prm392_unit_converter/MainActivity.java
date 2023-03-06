@@ -3,6 +3,7 @@ package com.example.prm392_unit_converter;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
@@ -15,10 +16,11 @@ public class MainActivity extends AppCompatActivity {
     Button btn_alertDialog;
     TextView tv_chosen;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_force_converter);
+        setContentView(R.layout.weight_converter);
 
         tv_chosen = findViewById(R.id.tv_fromUnit);
         btn_alertDialog = findViewById(R.id.btn_fromUnit);
