@@ -1,4 +1,4 @@
-package com.example.prm392_unit_converter.TestClickClasses.Splash;
+package com.example.prm392_unit_converter.Splash;
 
 import android.content.Intent;
 import android.os.Bundle;
