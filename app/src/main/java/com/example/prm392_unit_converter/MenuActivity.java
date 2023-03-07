@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 
-
 public class MenuActivity extends AppCompatActivity {
 
     CardView cv_length;
@@ -87,7 +86,7 @@ public class MenuActivity extends AppCompatActivity {
         cv_force.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MenuActivity.this, MainActivity.class));
+                startActivity(new Intent(MenuActivity.this, ForceConverterActivity.class));
             }
         });
         cv_power.setOnClickListener(new View.OnClickListener() {

@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_force_converter);
 
         tv_chosen = findViewById(R.id.tv_fromUnit);
-        btn_alertDialog = findViewById(R.id.btn_fromUnit);
+//        btn_alertDialog = findViewById(R.id.btn_fromUnit);
         btn_alertDialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

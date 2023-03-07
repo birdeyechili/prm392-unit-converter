@@ -12,13 +12,19 @@
         android:theme="@style/Theme.PRM392_Unit_Converter"
         tools:targetApi="31" >
         <activity
-            android:name=".MenuActivity"
-            android:exported="false"/>
+            android:name=".Splash.SplashScreen"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ForceConverterActivity"
             android:exported="false" />
         <activity
-            android:name=".Splash.SplashScreen"
+            android:name=".MenuActivity"
             android:exported="false" />
         <activity
             android:name=".Illumination.IlluminationConverterActivity"
@@ -28,13 +34,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false"/>
 
         <meta-data
             android:name="preloaded_fonts"
