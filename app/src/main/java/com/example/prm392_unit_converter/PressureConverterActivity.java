@@ -10,7 +10,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ForceConverterActivity extends AppCompatActivity {
+public class PressureConverterActivity extends AppCompatActivity {
     List<Unit> unitList;
     EditText et_fromUnit;
     EditText et_toUnit;
@@ -25,20 +25,20 @@ public class ForceConverterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_power_converter);
+        setContentView(R.layout.activity_pressure_converter);
 
         //Initialize hashmap
         unitList = new ArrayList<>();
-        unitList.add(new Unit("N","Newton",1.0));
-        unitList.add(new Unit("kN","Kilonewton",1000.0));
-        unitList.add(new Unit("kgf","Kilogram-force",9.80665));
-        unitList.add(new Unit("hN","Hectonewton",100.0));
-        unitList.add(new Unit("daN","Dekanewton",10.0));
-        unitList.add(new Unit("dN","Decinewton",0.1));
-        unitList.add(new Unit("cN","Centinewton",0.01));
-        unitList.add(new Unit("mN","Millinewton",0.001));
-        unitList.add(new Unit("lbf","Pound-force",4.4482216153));
-        unitList.add(new Unit("ozf","Ounce-force",0.278013851));
+        unitList.add(new Unit("Pa","Pascal",1.0));
+        unitList.add(new Unit("kPa","Kilopascal",1000.0));
+        unitList.add(new Unit("MPa","Megapascal",1000000.0));
+        unitList.add(new Unit("GPa","Gigapascal",1000000000.0));
+        unitList.add(new Unit("dPa","Decipascal",0.1));
+        unitList.add(new Unit("cPa","Centipascal",0.01));
+        unitList.add(new Unit("mPa","Millipascal",0.001));
+        unitList.add(new Unit("psi","Psi",6894.7572931783));
+        unitList.add(new Unit("ksi","Ksi",6894757.2931783));
+        unitList.add(new Unit("atm","Standard atmosphere",101325.0));
 
         //Initialize views
         et_fromUnit = findViewById(R.id.et_fromUnit);
@@ -52,8 +52,8 @@ public class ForceConverterActivity extends AppCompatActivity {
         tv_toValue = findViewById(R.id.tv_toValue);
 
         //Set on click listener
-        rl_fromUnit.setOnClickListener(new OnUnitClickListener(ForceConverterActivity.this,"Select From Unit", unitList, tv_fromUnit, tv_fromValue));
-        rl_toUnit.setOnClickListener(new OnUnitClickListener(ForceConverterActivity.this,"Select To Unit", unitList, tv_toUnit, tv_toValue));
+        rl_fromUnit.setOnClickListener(new OnUnitClickListener(PressureConverterActivity.this,"Select From Unit", unitList, tv_fromUnit, tv_fromValue));
+        rl_toUnit.setOnClickListener(new OnUnitClickListener(PressureConverterActivity.this,"Select To Unit", unitList, tv_toUnit, tv_toValue));
         rl_convert.setOnClickListener(v -> {
             String fromInput_raw = et_fromUnit.getText().toString();
             String fromValue_raw = tv_fromValue.getText().toString();

@@ -3,21 +3,27 @@ package com.example.prm392_unit_converter;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.view.View;
+import android.widget.ListAdapter;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class OnUnitClickListener implements View.OnClickListener {
     private Context context;
     private String title;
-    private String[] options;
+    private List<Unit> units;
     private TextView tv;
+    private TextView tvHidden;
 
-    public OnUnitClickListener(Context context, String title, String[] options, TextView tv) {
+    public OnUnitClickListener(Context context, String title, List<Unit> units, TextView tv, TextView tvHidden) {
         this.context = context;
         this.title = title;
-        this.options = options;
+        this.units = units;
         this.tv = tv;
+        this.tvHidden = tvHidden;
     }
 
     @Override
@@ -25,15 +31,21 @@ public class OnUnitClickListener implements View.OnClickListener {
         AlertDialog.Builder alertBuilder = new AlertDialog.Builder(context);
         alertBuilder.setTitle(title);
 
+        List<String> options = new ArrayList<>();
+        for(Unit unit:units){
+            options.add(unit.toString());
+        }
+
         alertBuilder.setSingleChoiceItems(
-                options,        //Items list
+                options.toArray(new String[0]),        //Items list
                 -1,             //Index of checked item (-1 = no selection)
                 new DialogInterface.OnClickListener() //Item click listener
                 {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        String selectedItem = options[which];
-                        tv.setText(selectedItem);
+                        Unit unit = units.get(which);
+                        tv.setText(unit.getSymbol());
+                        tvHidden.setText(String.valueOf(unit.getValue()));
                     }
                 }
         );

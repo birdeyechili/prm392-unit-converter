@@ -10,7 +10,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ForceConverterActivity extends AppCompatActivity {
+public class PowerConverterActivity extends AppCompatActivity {
     List<Unit> unitList;
     EditText et_fromUnit;
     EditText et_toUnit;
@@ -29,16 +29,13 @@ public class ForceConverterActivity extends AppCompatActivity {
 
         //Initialize hashmap
         unitList = new ArrayList<>();
-        unitList.add(new Unit("N","Newton",1.0));
-        unitList.add(new Unit("kN","Kilonewton",1000.0));
-        unitList.add(new Unit("kgf","Kilogram-force",9.80665));
-        unitList.add(new Unit("hN","Hectonewton",100.0));
-        unitList.add(new Unit("daN","Dekanewton",10.0));
-        unitList.add(new Unit("dN","Decinewton",0.1));
-        unitList.add(new Unit("cN","Centinewton",0.01));
-        unitList.add(new Unit("mN","Millinewton",0.001));
-        unitList.add(new Unit("lbf","Pound-force",4.4482216153));
-        unitList.add(new Unit("ozf","Ounce-force",0.278013851));
+        unitList.add(new Unit("W","Watt",1.0));
+        unitList.add(new Unit("hW","Hectowatt",100.0));
+        unitList.add(new Unit("kW","Kilowatt",1000.0));
+        unitList.add(new Unit("MW","Megawatt",1000000.0));
+        unitList.add(new Unit("dW","Deciwatt ",0.1));
+        unitList.add(new Unit("cW","Centiwatt",0.01));
+        unitList.add(new Unit("mW","Milliwatt",0.001));
 
         //Initialize views
         et_fromUnit = findViewById(R.id.et_fromUnit);
@@ -52,8 +49,8 @@ public class ForceConverterActivity extends AppCompatActivity {
         tv_toValue = findViewById(R.id.tv_toValue);
 
         //Set on click listener
-        rl_fromUnit.setOnClickListener(new OnUnitClickListener(ForceConverterActivity.this,"Select From Unit", unitList, tv_fromUnit, tv_fromValue));
-        rl_toUnit.setOnClickListener(new OnUnitClickListener(ForceConverterActivity.this,"Select To Unit", unitList, tv_toUnit, tv_toValue));
+        rl_fromUnit.setOnClickListener(new OnUnitClickListener(PowerConverterActivity.this,"Select From Unit", unitList, tv_fromUnit, tv_fromValue));
+        rl_toUnit.setOnClickListener(new OnUnitClickListener(PowerConverterActivity.this,"Select To Unit", unitList, tv_toUnit, tv_toValue));
         rl_convert.setOnClickListener(v -> {
             String fromInput_raw = et_fromUnit.getText().toString();
             String fromValue_raw = tv_fromValue.getText().toString();
