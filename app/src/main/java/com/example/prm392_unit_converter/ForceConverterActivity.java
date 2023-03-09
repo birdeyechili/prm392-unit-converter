@@ -25,7 +25,7 @@ public class ForceConverterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_power_converter);
+        setContentView(R.layout.activity_force_converter);
 
         //Initialize hashmap
         unitList = new ArrayList<>();
