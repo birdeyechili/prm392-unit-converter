@@ -7,7 +7,7 @@ android:layout_height="match_parent"
 android:background="@color/white">
 
 <RelativeLayout
-    android:background="@drawable/after_noon"
+    android:background="@drawable/background_night"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MenuActivity">

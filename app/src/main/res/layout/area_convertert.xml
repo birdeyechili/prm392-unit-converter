@@ -26,7 +26,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:fontFamily="@font/bungee"
-            android:text="Length"
+            android:text="AREA"
             android:textColor="@color/textColor"
             android:textSize="24sp" />
 
@@ -35,8 +35,8 @@
             android:layout_height="40dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="20dp"
-            android:src="@drawable/length"
-            app:srcCompat="@drawable/length" />
+            android:src="@drawable/area"
+            app:srcCompat="@drawable/area" />
 
     </LinearLayout>
 
