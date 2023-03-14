@@ -12,10 +12,10 @@
         android:theme="@style/Theme.PRM392_Unit_Converter"
         tools:targetApi="31">
         <activity
-            android:name=".PressureConverterActivity"
+            android:name=".Pressure.PressureConverterActivity"
             android:exported="false" />
         <activity
-            android:name=".PowerConverterActivity"
+            android:name=".Power.PowerConverterActivity"
             android:exported="false" />
         <activity
             android:name=".Splash.SplashScreen"
@@ -27,7 +27,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ForceConverterActivity"
+            android:name=".Force.ForceConverterActivity"
             android:exported="false" />
         <activity
             android:name=".MenuActivity"

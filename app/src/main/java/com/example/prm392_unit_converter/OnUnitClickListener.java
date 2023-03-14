@@ -45,7 +45,7 @@ public class OnUnitClickListener implements View.OnClickListener {
                     public void onClick(DialogInterface dialog, int which) {
                         Unit unit = units.get(which);
                         tv.setText(unit.getSymbol());
-                        tvHidden.setText(String.valueOf(unit.getValue()));
+                        tvHidden.setText(unit.getValue().toString());
                     }
                 }
         );

@@ -1,14 +1,16 @@
 package com.example.prm392_unit_converter;
 
+import java.math.BigDecimal;
+
 public class Unit {
     private String symbol;
     private String name;
-    private double value;
+    private BigDecimal value;
 
     public Unit(String symbol, String name, double value) {
         this.symbol = symbol;
         this.name = name;
-        this.value = value;
+        this.value = BigDecimal.valueOf(value);
     }
 
     public String getSymbol() {
@@ -19,7 +21,7 @@ public class Unit {
         return name;
     }
 
-    public double getValue() {
+    public BigDecimal getValue() {
         return value;
     }
 

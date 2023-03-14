@@ -7,6 +7,9 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import com.example.prm392_unit_converter.Force.ForceConverterActivity;
+import com.example.prm392_unit_converter.Power.PowerConverterActivity;
+import com.example.prm392_unit_converter.Pressure.PressureConverterActivity;
 
 
 public class MenuActivity extends AppCompatActivity {
