@@ -7,10 +7,10 @@ public class Unit {
     private String name;
     private BigDecimal value;
 
-    public Unit(String symbol, String name, double value) {
+    public Unit(String symbol, String name, String value) {
         this.symbol = symbol;
         this.name = name;
-        this.value = value;
+        this.value = new BigDecimal(value);
     }
 
     public String getSymbol() {
