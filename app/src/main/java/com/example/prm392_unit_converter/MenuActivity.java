@@ -99,7 +99,7 @@ public class MenuActivity extends AppCompatActivity {
         cv_data.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MenuActivity.this, MainActivity.class));
+                startActivity(new Intent(MenuActivity.this, DataConverterActivity.class));
             }
         });
         cv_currency.setOnClickListener(new View.OnClickListener() {
@@ -111,13 +111,13 @@ public class MenuActivity extends AppCompatActivity {
         cv_acceleration.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MenuActivity.this, MainActivity.class));
+                startActivity(new Intent(MenuActivity.this, AccelerationConverterActivity.class));
             }
         });
         cv_angle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MenuActivity.this, MainActivity.class));
+                startActivity(new Intent(MenuActivity.this, AngleConverterActivity.class));
             }
         });
         cv_illuminance.setOnClickListener(new View.OnClickListener() {

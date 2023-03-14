@@ -12,6 +12,15 @@
         android:theme="@style/Theme.PRM392_Unit_Converter"
         tools:targetApi="31">
         <activity
+            android:name=".AngleConverterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AccelerationConverterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DataConverterActivity"
+            android:exported="false" />
+        <activity
             android:name=".PressureConverterActivity"
             android:exported="false" />
         <activity
