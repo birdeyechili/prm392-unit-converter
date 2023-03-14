@@ -26,6 +26,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
             android:name=".Force.ForceConverterActivity"
             android:exported="false" />
         <activity
@@ -36,6 +37,7 @@
             android:exported="false" />
         <activity
             android:name=".Luminance.LuminanceConverterActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />

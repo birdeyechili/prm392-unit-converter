@@ -12,10 +12,10 @@
         android:theme="@style/Theme.PRM392_Unit_Converter"
         tools:targetApi="31">
         <activity
-            android:name=".Pressure.PressureConverterActivity"
+            android:name=".IlluminationConverterActivity"
             android:exported="false" />
         <activity
-            android:name=".Power.PowerConverterActivity"
+            android:name=".Luminance.LuminanceConverterActivity"
             android:exported="false" />
         <activity
             android:name=".Splash.SplashScreen"
@@ -26,23 +26,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-            android:name=".Force.ForceConverterActivity"
-            android:exported="false" />
         <activity
-            android:name=".MenuActivity"
+            android:name=".HomeScreen"
             android:exported="false" />
-        <activity
-            android:name=".Illumination.IlluminationConverterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Luminance.LuminanceConverterActivity"
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
-
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

@@ -1,4 +1,3 @@
-//
 package com.example.prm392_unit_converter;
 
 import java.math.BigDecimal;
@@ -8,7 +7,7 @@ public class Unit {
     private String name;
     private BigDecimal value;
 
-    public Unit(String symbol, String name, BigDecimal value) {
+    public Unit(String symbol, String name, double value) {
         this.symbol = symbol;
         this.name = name;
         this.value = value;
@@ -43,5 +42,3 @@ public class Unit {
         return name+" ["+symbol+"]";
     }
 }
-
-

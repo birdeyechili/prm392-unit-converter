@@ -12,7 +12,11 @@
         android:theme="@style/Theme.PRM392_Unit_Converter"
         tools:targetApi="31">
         <activity
+<<<<<<< HEAD
+            android:name=".Illumination.IlluminationConverterActivity"
+=======
             android:name=".Pressure.PressureConverterActivity"
+>>>>>>> origin/Phuong
             android:exported="false" />
         <activity
             android:name=".Power.PowerConverterActivity"
@@ -26,6 +30,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
+=======
+        <activity
             android:name=".Force.ForceConverterActivity"
             android:exported="false" />
         <activity
@@ -36,6 +43,7 @@
             android:exported="false" />
         <activity
             android:name=".Luminance.LuminanceConverterActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
@@ -43,6 +51,7 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+>>>>>>> origin/Phuong
     </application>
 
 </manifest>
