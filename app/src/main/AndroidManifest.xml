@@ -26,6 +26,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
             android:name=".Force.ForceConverterActivity"
             android:exported="false" />
         <activity
@@ -34,12 +35,10 @@
         <activity
             android:name=".Illumination.IlluminationConverterActivity"
             android:exported="false" />
-        <activity
-            android:name=".Luminance.LuminanceConverterActivity"
+        <activity android:name=".Luminance.LuminanceConverterActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
-
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
