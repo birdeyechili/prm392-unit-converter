@@ -7,6 +7,10 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import com.example.prm392_unit_converter.Force.ForceConverterActivity;
+import com.example.prm392_unit_converter.Luminance.LuminanceConverterActivity;
+import com.example.prm392_unit_converter.Power.PowerConverterActivity;
+import com.example.prm392_unit_converter.Pressure.PressureConverterActivity;
 
 
 public class MenuActivity extends AppCompatActivity {
@@ -123,7 +127,7 @@ public class MenuActivity extends AppCompatActivity {
         cv_illuminance.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MenuActivity.this, MainActivity.class));
+                startActivity(new Intent(MenuActivity.this, LuminanceConverterActivity.class));
             }
         });
         cv_pressure.setOnClickListener(new View.OnClickListener() {

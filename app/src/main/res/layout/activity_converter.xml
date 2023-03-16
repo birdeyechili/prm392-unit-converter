@@ -6,8 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_night"
-    tools:context=".PressureConverterActivity">
-
+    tools:context=".Force.ForceConverterActivity">
 
     <LinearLayout
         android:id="@+id/ll_heading"
@@ -21,23 +20,23 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/tv_text"
+            android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:fontFamily="@font/bungee"
-            android:text="Pressure"
+            android:text="Title"
             android:textColor="@color/textColor"
             android:textSize="24sp" />
 
         <ImageView
+            android:id="@+id/iv_icon"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="20dp"
-            app:srcCompat="@drawable/pressure" />
+            android:layout_marginTop="20dp" />
 
     </LinearLayout>
 
