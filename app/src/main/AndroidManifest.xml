@@ -12,26 +12,13 @@
         android:theme="@style/Theme.PRM392_Unit_Converter"
         tools:targetApi="31">
         <activity
-            android:name=".MenuActivity"
-            android:exported="true">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".ForceConverterActivity"
+            android:name=".Pressure.PressureConverterActivity"
             android:exported="false" />
         <activity
-            android:name=".TestClickClasses.Splash.SplashScreen"
+            android:name=".Power.PowerConverterActivity"
             android:exported="false" />
         <activity
-            android:name=".Illumination.IlluminationConverterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Luminance.LuminanceConverterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
+            android:name=".Splash.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,6 +26,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Force.ForceConverterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Illumination.IlluminationConverterActivity"
+            android:exported="false" />
+        <activity android:name=".Luminance.LuminanceConverterActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
