@@ -9,6 +9,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,9 +54,14 @@ public abstract class ConverterActivity extends AppCompatActivity {
                 BigDecimal fromInput = new BigDecimal(fromInput_raw);
                 BigDecimal fromValue = new BigDecimal(fromValue_raw);
                 BigDecimal toValue = new BigDecimal(toValue_raw);
-                et_toUnit.setText(Util.convert(fromInput,fromValue,toValue).toString());
+                et_toUnit.setText(convert(fromInput,fromValue,toValue).toString());
             }
         });
+    }
+
+    private BigDecimal convert(BigDecimal fromInput, BigDecimal fromValue, BigDecimal toValue) {
+        BigDecimal toBase = fromInput.multiply(fromValue);
+        return toBase.divide(toValue, 12, RoundingMode.HALF_EVEN).stripTrailingZeros();
     }
 
     public abstract void setContentView();

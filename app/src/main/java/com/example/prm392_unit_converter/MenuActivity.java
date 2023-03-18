@@ -7,10 +7,16 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import com.example.prm392_unit_converter.Area.AreaConverterActivity;
 import com.example.prm392_unit_converter.Force.ForceConverterActivity;
+import com.example.prm392_unit_converter.Length.LengthConverterActivity;
 import com.example.prm392_unit_converter.Luminance.LuminanceConverterActivity;
 import com.example.prm392_unit_converter.Power.PowerConverterActivity;
 import com.example.prm392_unit_converter.Pressure.PressureConverterActivity;
+import com.example.prm392_unit_converter.Speed.SpeedConverterActivity;
+import com.example.prm392_unit_converter.Time.TimeConverterActivity;
+import com.example.prm392_unit_converter.Volume.VolumeConverterActivity;
+import com.example.prm392_unit_converter.Weight.WeightConverterActivity;
 
 
 public class MenuActivity extends AppCompatActivity {
@@ -55,37 +61,37 @@ public class MenuActivity extends AppCompatActivity {
         cv_length.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MenuActivity.this, MainActivity.class));
+                startActivity(new Intent(MenuActivity.this, LengthConverterActivity.class));
             }
         });
         cv_weight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MenuActivity.this, MainActivity.class));
+                startActivity(new Intent(MenuActivity.this, WeightConverterActivity.class));
             }
         });
         cv_area.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MenuActivity.this, MainActivity.class));
+                startActivity(new Intent(MenuActivity.this, AreaConverterActivity.class));
             }
         });
         cv_volume.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MenuActivity.this, MainActivity.class));
+                startActivity(new Intent(MenuActivity.this, VolumeConverterActivity.class));
             }
         });
         cv_speed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MenuActivity.this, MainActivity.class));
+                startActivity(new Intent(MenuActivity.this, SpeedConverterActivity.class));
             }
         });
         cv_time.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MenuActivity.this, MainActivity.class));
+                startActivity(new Intent(MenuActivity.this, TimeConverterActivity.class));
             }
         });
         cv_force.setOnClickListener(new View.OnClickListener() {
