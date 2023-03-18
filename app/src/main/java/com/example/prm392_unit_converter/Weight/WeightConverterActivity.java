@@ -33,7 +33,7 @@ public class WeightConverterActivity extends ConverterActivity {
         unitList.add(new Unit("kg","Kilogram","1.0"));
         unitList.add(new Unit("g","Gram","0.001"));
         unitList.add(new Unit("mg","Milligram","0.000001"));
-        unitList.add(new Unit("t","Metric ton ","0.1"));
+        unitList.add(new Unit("t","Metric ton ","1000"));
         unitList.add(new Unit("£","Pound","0.453592"));
         unitList.add(new Unit("oz","Ounce","0.0283495"));
         unitList.add(new Unit("ct","Carat","0.0002"));

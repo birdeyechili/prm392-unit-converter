@@ -30,14 +30,14 @@ public class LengthConverterActivity extends ConverterActivity {
     @Override
     public List<Unit> getUnitList() {
         List<Unit> unitList = new ArrayList<>();
-        unitList.add(new Unit("cm","Centimeter","100.0"));
+        unitList.add(new Unit("cm","Centimeter","0.01"));
         unitList.add(new Unit("m","Meter","1.0"));
-        unitList.add(new Unit("km","Kilometer","0.001"));
-        unitList.add(new Unit("mm","Millimeter","1000.0"));
-        unitList.add(new Unit("in","Inch ","39.37007874"));
-        unitList.add(new Unit("ft","Foot","3.280839895"));
-        unitList.add(new Unit("mi","Mile","0.0006213689"));
-        unitList.add(new Unit("mi","Mile","0.0006213689"));
+        unitList.add(new Unit("km","Kilometer","1000.0"));
+        unitList.add(new Unit("mm","Millimeter","0.001"));
+        unitList.add(new Unit("in","Inch ","0.0254"));
+        unitList.add(new Unit("ft","Foot","0.3048"));
+        unitList.add(new Unit("mi","Mile","1609.344"));
+        unitList.add(new Unit("yd","Yard ","0.9144"));
 
         return unitList;
     }
