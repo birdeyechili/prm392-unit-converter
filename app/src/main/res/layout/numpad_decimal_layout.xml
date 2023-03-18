@@ -195,9 +195,8 @@
                 android:text="0"
                 android:textColor="@color/white"
                 android:textSize="32dp"
-                app:cornerRadius="35dp"
                 app:backgroundTint="#4682B4"
-                />
+                app:cornerRadius="35dp" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_del"
@@ -206,12 +205,21 @@
                 android:layout_height="70dp"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginVertical="10dp"
-                android:text="C"
+                android:insetLeft="0dp"
+                android:insetTop="0dp"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                android:text="del"
                 android:textAlignment="center"
                 android:textColor="@color/white"
+                android:textScaleX="0"
                 android:textSize="32dp"
                 app:backgroundTint="#F44336"
-                app:cornerRadius="35dp" />
+                app:cornerRadius="35dp"
+                app:icon="@drawable/baseline_backspace_24"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconTint="@color/white" />
 
         </LinearLayout>
     </LinearLayout>

@@ -3,10 +3,13 @@ package com.example.prm392_unit_converter;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.google.android.material.button.MaterialButton;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -27,6 +30,7 @@ public abstract class ConverterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView();
+
         //Set title and icon
         ((TextView)findViewById(R.id.tv_title)).setText(getLayoutTitle());
         ((ImageView)findViewById(R.id.iv_icon)).setImageResource(getLayoutIcon());
@@ -38,7 +42,7 @@ public abstract class ConverterActivity extends AppCompatActivity {
         tv_toUnit = findViewById(R.id.tv_toUnit);
         rl_fromUnit = findViewById(R.id.rl_fromUnit);
         rl_toUnit = findViewById(R.id.rl_toUnit);
-        rl_convert = findViewById(R.id.rl_convert);
+//        rl_convert = findViewById(R.id.rl_convert);
         tv_fromValue = findViewById(R.id.tv_fromValue);
         tv_toValue = findViewById(R.id.tv_toValue);
 

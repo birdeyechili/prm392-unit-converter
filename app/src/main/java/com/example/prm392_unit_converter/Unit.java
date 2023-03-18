@@ -1,11 +1,22 @@
 package com.example.prm392_unit_converter;
 
+import androidx.annotation.NonNull;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.math.BigDecimal;
 
+@Entity(tableName = "currency")
 public class Unit {
+    @PrimaryKey
+    @NonNull
     private String symbol;
     private String name;
+
     private BigDecimal value;
+
+    public Unit() {
+    }
 
     public Unit(String symbol, String name, String value) {
         this.symbol = symbol;
