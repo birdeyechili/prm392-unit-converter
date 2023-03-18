@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_converter);
 
-        tv_chosen = findViewById(R.id.tv_fromUnit);
+        tv_chosen = findViewById(R.id.tv_fromSymbol);
 //        btn_alertDialog = findViewById(R.id.btn_fromUnit);
         btn_alertDialog.setOnClickListener(new View.OnClickListener() {
             @Override

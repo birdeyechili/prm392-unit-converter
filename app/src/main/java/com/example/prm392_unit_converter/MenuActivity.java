@@ -10,6 +10,7 @@ import androidx.cardview.widget.CardView;
 import com.example.prm392_unit_converter.Area.AreaConverterActivity;
 import com.example.prm392_unit_converter.Acceleration.AccelerationConverterActivity;
 import com.example.prm392_unit_converter.Angle.AngleConverterActivity;
+import com.example.prm392_unit_converter.Calculator.SimpleCalculator;
 import com.example.prm392_unit_converter.Data.DataConverterActivity;
 import com.example.prm392_unit_converter.Force.ForceConverterActivity;
 import com.example.prm392_unit_converter.Length.LengthConverterActivity;
@@ -148,7 +149,7 @@ public class MenuActivity extends AppCompatActivity {
         cv_base.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MenuActivity.this, MainActivity.class));
+                startActivity(new Intent(MenuActivity.this, SimpleCalculator.class));
             }
         });
 
