@@ -21,6 +21,15 @@
             android:name=".Weight.WeightConverterActivity"
             android:exported="false" />
         <activity
+            android:name=".Acceleration.AccelerationConverterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Angle.AngleConverterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Data.DataConverterActivity"
+            android:exported="false" />
+        <activity
             android:name=".Speed.SpeedConverterActivity"
             android:exported="false">
         </activity>
