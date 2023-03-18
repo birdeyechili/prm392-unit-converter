@@ -31,15 +31,15 @@ public class TimeConverterActivity extends ConverterActivity {
     public List<Unit> getUnitList() {
         List<Unit> unitList = new ArrayList<>();
         unitList.add(new Unit("hr","Hour","1.0"));
-        unitList.add(new Unit("s","Second","3600"));
-        unitList.add(new Unit("ms","Milisecond","3600000"));
-        unitList.add(new Unit("μs","Microsecond","3600000000"));
-        unitList.add(new Unit("ns","Nanosecond","3600000000000"));
-        unitList.add(new Unit("min","Minute","60"));
-        unitList.add(new Unit("d","day","0.0416666667"));
-        unitList.add(new Unit("week","Week","0.005952381"));
-        unitList.add(new Unit("month","Month","0.0013689254"));
-        unitList.add(new Unit("y","Year","0.0001140771"));
+        unitList.add(new Unit("s","Second","0.0002777777777777777"));
+        unitList.add(new Unit("ms","Milisecond","0.00000027777777777777"));
+        unitList.add(new Unit("μs","Microsecond","0.00000000027777777777"));
+        unitList.add(new Unit("ns","Nanosecond","0.00000000000027777777"));
+        unitList.add(new Unit("min","Minute","0.016666666666666666666"));
+        unitList.add(new Unit("d","day","24"));
+        unitList.add(new Unit("week","Week","168"));
+        unitList.add(new Unit("month","Month","730.5"));
+        unitList.add(new Unit("y","Year","8766"));
 
         return unitList;
     }

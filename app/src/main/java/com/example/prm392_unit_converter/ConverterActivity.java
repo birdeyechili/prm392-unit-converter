@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -26,6 +27,7 @@ public abstract class ConverterActivity extends AppCompatActivity {
     LinearLayout ll_toUnit;
     TextView tv_fromValue;
     TextView tv_toValue;
+    private final int MAX_INPUT_LENGTH = 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +53,10 @@ public abstract class ConverterActivity extends AppCompatActivity {
         tv_fromValue.setText(getUnitList().get(0).getValue().toString());
         tv_toValue.setText(getUnitList().get(1).getValue().toString());
 
+        //Set horizontal scroll for result
+        tv_result.setMovementMethod(new ScrollingMovementMethod());
+        tv_result.setHorizontallyScrolling(true);
+
         //Set on click listener
         ll_fromUnit.setOnClickListener(new OnUnitClickListener(this, tv_fromSymbol, tv_fromValue));
         ll_toUnit.setOnClickListener(new OnUnitClickListener(this, tv_toSymbol, tv_toValue));
@@ -73,28 +79,27 @@ public abstract class ConverterActivity extends AppCompatActivity {
             String input_raw = tv_input.getText().toString();
             String fromValue_raw = tv_fromValue.getText().toString();
             String toValue_raw = tv_toValue.getText().toString();
-
+            int length = input_raw.length();
             MaterialButton button = (MaterialButton) v;
             String buttonText = button.getText().toString();
 
             if (buttonText.equals("del")) {
-                int length = input_raw.length();
                 if(length>1){
                     input_raw = input_raw.substring(0, input_raw.length() - 1);
                 }else{
                     input_raw = "0";
                 }
             }else if(buttonText.equals(".")){
-                if(!input_raw.contains(".")) tv_input.setText(input_raw + buttonText);
+                if(!input_raw.contains(".")&&length<MAX_INPUT_LENGTH) tv_input.setText(input_raw + buttonText);
                 return;
-            }else{
+            }else if(length<MAX_INPUT_LENGTH){
                 input_raw = input_raw + buttonText;
             }
             BigDecimal input = new BigDecimal(input_raw);
             BigDecimal fromValue = new BigDecimal(fromValue_raw);
             BigDecimal toValue = new BigDecimal(toValue_raw);
             tv_input.setText(input.toString());
-            tv_result.setText(convert(input,fromValue,toValue).toString());
+            tv_result.setText(convert(input,fromValue,toValue).stripTrailingZeros().toString());
         });
     }
 
