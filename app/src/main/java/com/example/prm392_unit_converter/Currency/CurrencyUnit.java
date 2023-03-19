@@ -1,19 +1,23 @@
-package com.example.prm392_unit_converter;
+package com.example.prm392_unit_converter.Currency;
+
+import androidx.annotation.NonNull;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
 import java.math.BigDecimal;
 
-public class Unit {
+@Entity
+public class CurrencyUnit {
+    @PrimaryKey
+    @NonNull
     private String symbol;
-    private String name;
-
     private BigDecimal value;
 
-    public Unit() {
+    public CurrencyUnit() {
     }
 
-    public Unit(String symbol, String name, String value) {
+    public CurrencyUnit(String symbol, String value) {
         this.symbol = symbol;
-        this.name = name;
         this.value = new BigDecimal(value);
     }
 
@@ -25,24 +29,11 @@ public class Unit {
         this.symbol = symbol;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public BigDecimal getValue() {
         return value;
     }
 
     public void setValue(BigDecimal value) {
         this.value = value;
-    }
-
-    @Override
-    public String toString() {
-        return name+" ["+symbol+"]";
     }
 }

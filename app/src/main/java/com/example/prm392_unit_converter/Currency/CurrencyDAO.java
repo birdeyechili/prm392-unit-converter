@@ -11,12 +11,12 @@ import java.util.List;
 
 @Dao
 public interface CurrencyDAO {
-    @Query("SELECT * FROM currency")
-    List<Unit> getAll();
+    @Query("SELECT * FROM CurrencyUnit")
+    List<CurrencyUnit> getAll();
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insert(Unit unit);
+    void insert(CurrencyUnit currencyUnit);
 
-    @Query("DELETE FROM currency")
+    @Query("DELETE FROM CurrencyUnit")
     void delete();
 }

@@ -13,11 +13,6 @@ import java.util.List;
 
 public class AreaConverterActivity extends ConverterActivity {
     @Override
-    public void setContentView() {
-        setContentView(R.layout.activity_converter);
-    }
-
-    @Override
     public String getLayoutTitle() {
         return "Area";
     }

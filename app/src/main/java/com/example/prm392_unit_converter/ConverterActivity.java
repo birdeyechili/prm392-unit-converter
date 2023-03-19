@@ -108,7 +108,10 @@ public abstract class ConverterActivity extends AppCompatActivity {
         return toBase.divide(toValue, 12, RoundingMode.HALF_EVEN).stripTrailingZeros();
     }
 
-    public abstract void setContentView();
+    public void setContentView() {
+        setContentView(R.layout.activity_converter);
+    }
+
     public abstract String getLayoutTitle();
     public abstract int getLayoutIcon();
     public abstract List<Unit> getUnitList();
