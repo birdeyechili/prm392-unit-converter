@@ -28,6 +28,7 @@ public abstract class ConverterActivity extends AppCompatActivity {
     TextView tv_fromValue;
     TextView tv_toValue;
     private final int MAX_INPUT_LENGTH = 10;
+    private final int MAX_DECIMAL_SCALE = 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,23 +59,23 @@ public abstract class ConverterActivity extends AppCompatActivity {
         tv_result.setHorizontallyScrolling(true);
 
         //Set on click listener
-        ll_fromUnit.setOnClickListener(new OnUnitClickListener(this, tv_fromSymbol, tv_fromValue));
-        ll_toUnit.setOnClickListener(new OnUnitClickListener(this, tv_toSymbol, tv_toValue));
-        assignId(R.id.btn_0);
-        assignId(R.id.btn_1);
-        assignId(R.id.btn_2);
-        assignId(R.id.btn_3);
-        assignId(R.id.btn_4);
-        assignId(R.id.btn_5);
-        assignId(R.id.btn_6);
-        assignId(R.id.btn_7);
-        assignId(R.id.btn_8);
-        assignId(R.id.btn_9);
-        assignId(R.id.btn_del);
-        assignId(R.id.btn_dot);
+        setUnitClickListener(ll_fromUnit, tv_fromSymbol, tv_fromValue);
+        setUnitClickListener(ll_toUnit, tv_toSymbol, tv_toValue);
+        setButtonClickListener(R.id.btn_0);
+        setButtonClickListener(R.id.btn_1);
+        setButtonClickListener(R.id.btn_2);
+        setButtonClickListener(R.id.btn_3);
+        setButtonClickListener(R.id.btn_4);
+        setButtonClickListener(R.id.btn_5);
+        setButtonClickListener(R.id.btn_6);
+        setButtonClickListener(R.id.btn_7);
+        setButtonClickListener(R.id.btn_8);
+        setButtonClickListener(R.id.btn_9);
+        setButtonClickListener(R.id.btn_del);
+        setButtonClickListener(R.id.btn_dot);
     }
 
-    void assignId(int id) {
+    void setButtonClickListener(int id) {
         findViewById(id).setOnClickListener(v -> {
             String input_raw = tv_input.getText().toString();
             String fromValue_raw = tv_fromValue.getText().toString();
@@ -105,7 +106,7 @@ public abstract class ConverterActivity extends AppCompatActivity {
 
     private BigDecimal convert(BigDecimal fromInput, BigDecimal fromValue, BigDecimal toValue) {
         BigDecimal toBase = fromInput.multiply(fromValue);
-        return toBase.divide(toValue, 12, RoundingMode.HALF_EVEN).stripTrailingZeros();
+        return toBase.divide(toValue, MAX_DECIMAL_SCALE, RoundingMode.HALF_EVEN).stripTrailingZeros();
     }
 
     public void setContentView() {
@@ -116,20 +117,9 @@ public abstract class ConverterActivity extends AppCompatActivity {
     public abstract int getLayoutIcon();
     public abstract List<Unit> getUnitList();
 
-    class OnUnitClickListener implements View.OnClickListener {
-        private Context context;
-        private TextView tv_symbol;
-        private TextView tv_value;
-
-        public OnUnitClickListener(Context context, TextView tv_symbol, TextView tv_value) {
-            this.context = context;
-            this.tv_symbol = tv_symbol;
-            this.tv_value = tv_value;
-        }
-
-        @Override
-        public void onClick(View v) {
-            AlertDialog.Builder alertBuilder = new AlertDialog.Builder(context);
+    private void setUnitClickListener(LinearLayout linearLayout,TextView tv_symbol, TextView tv_value){
+        linearLayout.setOnClickListener(v -> {
+            AlertDialog.Builder alertBuilder = new AlertDialog.Builder(this);
             alertBuilder.setTitle("Select Unit");
 
             List<String> options = new ArrayList<>();
@@ -162,6 +152,6 @@ public abstract class ConverterActivity extends AppCompatActivity {
             AlertDialog dialog = alertBuilder.create();
             //display the alert dialog
             dialog.show();
-        }
+        });
     }
 }
