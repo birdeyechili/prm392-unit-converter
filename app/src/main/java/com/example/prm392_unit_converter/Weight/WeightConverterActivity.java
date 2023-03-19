@@ -21,7 +21,7 @@ public class WeightConverterActivity extends ConverterActivity {
     public int getLayoutIcon() {
         return R.drawable.weight;
     }
-
+//
     @Override
     public List<Unit> getUnitList() {
         List<Unit> unitList = new ArrayList<>();
