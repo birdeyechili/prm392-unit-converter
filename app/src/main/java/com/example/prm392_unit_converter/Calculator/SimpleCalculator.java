@@ -1,7 +1,11 @@
 package com.example.prm392_unit_converter.Calculator;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
+import android.widget.HorizontalScrollView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,12 +23,15 @@ public class SimpleCalculator extends AppCompatActivity implements View.OnClickL
     MaterialButton btn_0, btn_1, btn_2, btn_3, btn_4, btn_5, btn_6, btn_7, btn_8, btn_9;
     MaterialButton btn_del, btn_dot;
 
+    HorizontalScrollView scrollView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_simple_calculator);
         solutionTv = (TextView) findViewById(R.id.solution_tv);
         resultTv = (TextView) findViewById(R.id.result_tv);
+        scrollView = findViewById(R.id.scrollViewSolution);
 
         //HashMap<MaterialButton, Integer> buttonMap = new HashMap<>();
         assignId(btn_c, R.id.btn_c);
@@ -72,12 +79,19 @@ public class SimpleCalculator extends AppCompatActivity implements View.OnClickL
             return;
         }
         if (buttonText.equals("del")) {
-            dataToCalculate = dataToCalculate.substring(0, dataToCalculate.length() - 1);
+            if (dataToCalculate.length() > 0) {
+                dataToCalculate = dataToCalculate.substring(0, dataToCalculate.length() - 1);
+            }
         } else {
             dataToCalculate = dataToCalculate + buttonText;
         }
         solutionTv.setText(dataToCalculate);
-
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.fullScroll(View.FOCUS_RIGHT);
+            }
+        });
     }
 
     String getResult(String data) {
@@ -91,7 +105,7 @@ public class SimpleCalculator extends AppCompatActivity implements View.OnClickL
             }
             return finalResult;
         } catch (Exception e) {
-            return "Err";
+            return "Syntax Error!";
         }
     }
 }

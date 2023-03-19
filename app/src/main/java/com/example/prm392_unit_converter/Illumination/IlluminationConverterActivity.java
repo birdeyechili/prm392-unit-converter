@@ -30,7 +30,14 @@ public class IlluminationConverterActivity extends ConverterActivity {
     @Override
     public List<Unit> getUnitList() {
         List<Unit> unitList = new ArrayList<>();
-        //add unit value
+        unitList.add(new Unit("lx", "Lux", "1"));
+        unitList.add(new Unit("cm*c", "Centimeter-candle", "10000"));
+        unitList.add(new Unit("ft*c", "foot-candle", "10.7639104167"));
+        unitList.add(new Unit("flame", "Flame", "43.0556416668"));
+        unitList.add(new Unit("ph", "Phot", "10000"));
+        unitList.add(new Unit("nox", "Nox", "0.001"));
+        unitList.add(new Unit("lm/m^2", "Lumen/square meter", "1"));
+        unitList.add(new Unit("lm/ft^2", "Lumen/square foot", "10.7639104167"));
         return unitList;
     }
 }
