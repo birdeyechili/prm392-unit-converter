@@ -100,7 +100,7 @@ public abstract class ConverterActivity extends AppCompatActivity {
             BigDecimal fromValue = new BigDecimal(fromValue_raw);
             BigDecimal toValue = new BigDecimal(toValue_raw);
             tv_input.setText(input.toString());
-            tv_result.setText(convert(input,fromValue,toValue).stripTrailingZeros().toString());
+            tv_result.setText(convert(input,fromValue,toValue).toPlainString());
         });
     }
 
@@ -143,7 +143,7 @@ public abstract class ConverterActivity extends AppCompatActivity {
                             BigDecimal input = new BigDecimal(input_raw);
                             BigDecimal fromValue = new BigDecimal(fromValue_raw);
                             BigDecimal toValue = new BigDecimal(toValue_raw);
-                            tv_result.setText(convert(input,fromValue,toValue).toString());
+                            tv_result.setText(convert(input,fromValue,toValue).toPlainString());
                             dialog.dismiss();
                         }
                     }
