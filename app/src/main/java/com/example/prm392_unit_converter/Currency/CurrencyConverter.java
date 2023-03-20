@@ -38,6 +38,7 @@ public class CurrencyConverter extends AppCompatActivity {
     TextView tv_fromValue;
     TextView tv_toValue;
     private final int MAX_INPUT_LENGTH = 10;
+    private final int MAX_DECIMAL_SCALE = 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -138,8 +139,8 @@ public class CurrencyConverter extends AppCompatActivity {
     }
 
     private BigDecimal convert(BigDecimal fromInput, BigDecimal fromValue, BigDecimal toValue) {
-        BigDecimal toBase = fromInput.divide(fromValue, 12, RoundingMode.HALF_EVEN);
-        return toBase.multiply(toValue).stripTrailingZeros();
+        BigDecimal toBase = fromInput.divide(fromValue, MAX_DECIMAL_SCALE, RoundingMode.HALF_EVEN);
+        return toBase.multiply(toValue).setScale(MAX_DECIMAL_SCALE, RoundingMode.HALF_EVEN).stripTrailingZeros();
     }
 
     private void setUnitClickListener(LinearLayout linearLayout,TextView tv_symbol, TextView tv_value){
@@ -149,7 +150,7 @@ public class CurrencyConverter extends AppCompatActivity {
 
             List<String> options = new ArrayList<>();
             for(CurrencyUnit unit:getUnitList()){
-                options.add(unit.toString());
+                options.add(unit.getSymbol());
             }
 
             alertBuilder.setSingleChoiceItems(
