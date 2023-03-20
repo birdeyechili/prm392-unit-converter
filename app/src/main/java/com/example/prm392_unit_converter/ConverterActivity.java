@@ -17,7 +17,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
-
+////
 public abstract class ConverterActivity extends AppCompatActivity {
     TextView tv_input;
     TextView tv_result;
