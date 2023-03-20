@@ -1,5 +1,7 @@
 package com.example.prm392_unit_converter.Currency;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -10,12 +12,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
 import com.example.prm392_unit_converter.R;
+import com.example.prm392_unit_converter.Unit;
 import com.google.android.material.button.MaterialButton;
 
 import java.math.BigDecimal;
@@ -64,23 +68,29 @@ public class CurrencyConverter extends AppCompatActivity {
         tv_result.setHorizontallyScrolling(true);
 
         //Set on click listener
-        ll_fromUnit.setOnClickListener(new OnUnitClickListener(this, tv_fromSymbol, tv_fromValue));
-        ll_toUnit.setOnClickListener(new OnUnitClickListener(this, tv_toSymbol, tv_toValue));
-        assignId(R.id.btn_0);
-        assignId(R.id.btn_1);
-        assignId(R.id.btn_2);
-        assignId(R.id.btn_3);
-        assignId(R.id.btn_4);
-        assignId(R.id.btn_5);
-        assignId(R.id.btn_6);
-        assignId(R.id.btn_7);
-        assignId(R.id.btn_8);
-        assignId(R.id.btn_9);
-        assignId(R.id.btn_del);
-        assignId(R.id.btn_dot);
+        tv_result.setOnLongClickListener(v->{
+            ClipboardManager cm = (ClipboardManager)getApplicationContext().getSystemService(Context.CLIPBOARD_SERVICE);
+            cm.setPrimaryClip(ClipData.newPlainText("Convert result",tv_result.getText()));
+            Toast.makeText(getApplicationContext(), "Copied convert result", Toast.LENGTH_SHORT).show();
+            return true;
+        });
+        setUnitClickListener(ll_fromUnit, tv_fromSymbol, tv_fromValue);
+        setUnitClickListener(ll_toUnit, tv_toSymbol, tv_toValue);
+        setButtonClickListener(R.id.btn_0);
+        setButtonClickListener(R.id.btn_1);
+        setButtonClickListener(R.id.btn_2);
+        setButtonClickListener(R.id.btn_3);
+        setButtonClickListener(R.id.btn_4);
+        setButtonClickListener(R.id.btn_5);
+        setButtonClickListener(R.id.btn_6);
+        setButtonClickListener(R.id.btn_7);
+        setButtonClickListener(R.id.btn_8);
+        setButtonClickListener(R.id.btn_9);
+        setButtonClickListener(R.id.btn_del);
+        setButtonClickListener(R.id.btn_dot);
     }
 
-    void assignId(int id) {
+    void setButtonClickListener(int id) {
         findViewById(id).setOnClickListener(v -> {
             String input_raw = tv_input.getText().toString();
             String fromValue_raw = tv_fromValue.getText().toString();
@@ -105,7 +115,7 @@ public class CurrencyConverter extends AppCompatActivity {
             BigDecimal fromValue = new BigDecimal(fromValue_raw);
             BigDecimal toValue = new BigDecimal(toValue_raw);
             tv_input.setText(input.toString());
-            tv_result.setText(convert(input,fromValue,toValue).stripTrailingZeros().toString());
+            tv_result.setText(convert(input,fromValue,toValue).toPlainString());
         });
     }
 
@@ -132,25 +142,14 @@ public class CurrencyConverter extends AppCompatActivity {
         return toBase.multiply(toValue).stripTrailingZeros();
     }
 
-    class OnUnitClickListener implements View.OnClickListener {
-        private Context context;
-        private TextView tv_symbol;
-        private TextView tv_value;
-
-        public OnUnitClickListener(Context context, TextView tv_symbol, TextView tv_value) {
-            this.context = context;
-            this.tv_symbol = tv_symbol;
-            this.tv_value = tv_value;
-        }
-
-        @Override
-        public void onClick(View v) {
-            AlertDialog.Builder alertBuilder = new AlertDialog.Builder(context);
+    private void setUnitClickListener(LinearLayout linearLayout,TextView tv_symbol, TextView tv_value){
+        linearLayout.setOnClickListener(v -> {
+            AlertDialog.Builder alertBuilder = new AlertDialog.Builder(this);
             alertBuilder.setTitle("Select Unit");
 
             List<String> options = new ArrayList<>();
             for(CurrencyUnit unit:getUnitList()){
-                options.add(unit.getSymbol());
+                options.add(unit.toString());
             }
 
             alertBuilder.setSingleChoiceItems(
@@ -169,7 +168,7 @@ public class CurrencyConverter extends AppCompatActivity {
                             BigDecimal input = new BigDecimal(input_raw);
                             BigDecimal fromValue = new BigDecimal(fromValue_raw);
                             BigDecimal toValue = new BigDecimal(toValue_raw);
-                            tv_result.setText(convert(input,fromValue,toValue).toString());
+                            tv_result.setText(convert(input,fromValue,toValue).toPlainString());
                             dialog.dismiss();
                         }
                     }
@@ -178,6 +177,6 @@ public class CurrencyConverter extends AppCompatActivity {
             AlertDialog dialog = alertBuilder.create();
             //display the alert dialog
             dialog.show();
-        }
+        });
     }
 }

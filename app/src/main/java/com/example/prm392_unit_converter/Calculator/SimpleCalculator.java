@@ -1,12 +1,15 @@
 package com.example.prm392_unit_converter.Calculator;
 
 import android.annotation.SuppressLint;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.HorizontalScrollView;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -32,6 +35,12 @@ public class SimpleCalculator extends AppCompatActivity implements View.OnClickL
         solutionTv = (TextView) findViewById(R.id.solution_tv);
         resultTv = (TextView) findViewById(R.id.result_tv);
         scrollView = findViewById(R.id.scrollViewSolution);
+        resultTv.setOnLongClickListener(v->{
+            ClipboardManager cm = (ClipboardManager)getApplicationContext().getSystemService(android.content.Context.CLIPBOARD_SERVICE);
+            cm.setPrimaryClip(ClipData.newPlainText("Calculator result",resultTv.getText()));
+            Toast.makeText(getApplicationContext(), "Copied calculator result", Toast.LENGTH_SHORT).show();
+            return true;
+        });
 
         //HashMap<MaterialButton, Integer> buttonMap = new HashMap<>();
         assignId(btn_c, R.id.btn_c);

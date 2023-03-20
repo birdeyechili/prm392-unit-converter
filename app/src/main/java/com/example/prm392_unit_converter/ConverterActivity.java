@@ -3,6 +3,8 @@ package com.example.prm392_unit_converter;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -11,6 +13,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
 import java.math.BigDecimal;
@@ -59,6 +62,12 @@ public abstract class ConverterActivity extends AppCompatActivity {
         tv_result.setHorizontallyScrolling(true);
 
         //Set on click listener
+        tv_result.setOnLongClickListener(v->{
+            ClipboardManager cm = (ClipboardManager)getApplicationContext().getSystemService(Context.CLIPBOARD_SERVICE);
+            cm.setPrimaryClip(ClipData.newPlainText("Convert result",tv_result.getText()));
+            Toast.makeText(getApplicationContext(), "Copied convert result", Toast.LENGTH_SHORT).show();
+            return true;
+        });
         setUnitClickListener(ll_fromUnit, tv_fromSymbol, tv_fromValue);
         setUnitClickListener(ll_toUnit, tv_toSymbol, tv_toValue);
         setButtonClickListener(R.id.btn_0);
